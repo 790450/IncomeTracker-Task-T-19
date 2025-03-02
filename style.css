@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Volkhov", serif;
+}
+body{
+width: 100vm;
+height: 100vh;
+background-color: #dfe6df;
+display: grid;
+place-items: center;
+}
+.container{
+    width: 800px;
+    height: 600px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0) 1.95px 1.95px 2.6px;
+    display: flex;
+    
+
+}
+.ledger{
+    background-color: #2f3542;
+    padding: 20px;
+    color: #dfe6df;
+}
+.ledger h2{
+    text-transform: uppercase;
+    color: chocolate;
+}
+
+.ledger h2,
+.ledger h4,
+.ledger h1{
+    font-weight: 600;
+    margin-bottom: 5px;
+    padding: 3px;
+}
+.transaction{
+    flex: 1;
+    padding: 10px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.inc-exp-container{
+    display: flex;
+    padding: 5px;
+    gap: 10px;
+}
+.inc-exp-container div{
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px;
+    font-size: 18px;
+    flex: 1;
+}
+.inc-exp-container p{
+    font-size: 20px;
+}
+ .inc{
+    color: green;
+    border: 3px solid green;
+}
+.exp{
+    color: red;
+    border: 3px solid red;
+}
+#form{
+    padding: 5px;
+    margin-top: 20px;
+}
+.form-control {
+    margin-top: 10px;
+}
+label{
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 400;
+}
+input[type="text"],
+input[type="number"]{
+  border: 1px solid #dedede;
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  outline: none;
+  padding: 10px;
+  border-radius: 2px;
+}
+.btn{
+    background-color: aquamarine;
+    display: block;
+    border-radius: 2px;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 0;
+    margin-top: 25px
+    
+}
+.transaction h2{
+    color: orange;
+    font-weight: 400;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f1f1f1;
+    margin-bottom: 5px;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+}
+.trans{
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+.trans li{
+    background-color: #fff;
+    color: #333;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid black;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    font-weight: 600;
+}
+.trans li.inc1{
+    border-left: 5px solid green;
+}
+.trans li.exp1{
+    border-left: 5px solid red;
+}
+.btn-del{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    color: #f1f1f1;
+    background-color: red;
+    border: none;
+    font-size: 18px;
+    line-height: 20px;
+    cursor: pointer;
+    opacity: 0;
+
+}
+.trans li:hover .btn-del{
+    opacity: 1;
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f1f1f1;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #2e86de;
+    border-radius: 8px;
+}
