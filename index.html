@@ -1,82 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Budget App</title>
-    <!-- Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <div class="container">
-        <div class="sub-container">
-          <!-- Budget -->
-          <div class="total-amount-container">
-            <h3>Income</h3>
-            <p class="hide error" id="budget-error">
-              Value cannot be empty or negative
-            </p>
-            <input
-              type="number"
-              id="total-amount"
-              placeholder="Enter Total Amount"
-            />
-            <button class="submit" id="total-amount-button">Enter</button>
-          </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Expense Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Income Expense Calculator</h1>
 
-          <!-- Expenditure -->
-          <div class="user-amount-container">
-            <h3>Expenses</h3>
-            <p class="hide error" id="product-title-error">
-              Values cannot be empty
-            </p>
-            <input
-              type="text"
-              class="product-title"
-              id="product-title"
-              placeholder="Enter Title of Product"
-            />
-            <input
-              type="number"
-              id="user-amount"
-              placeholder="Enter Cost of Product"
-            />
-            <button class="submit" id="check-amount">Check Amount</button>
-          </div>
-        </div>
-        <!-- Output -->
-        <div class="output-container flex-space">
-          <div>
-            <p>Total Income</p>
-            <span id="amount">0</span>
-          </div>
-          <div>
-            <p>Expenses</p>
-            <span id="expenditure-value">0</span>
-          </div>
-          <div>
-            <p>Balance</p>
-            <span id="balance-amount">0</span>
-          </div>
-        </div>
-      </div>
-      <!-- List -->
-      <div class="list">
-        <h3>Expense List</h3>
-        <div class="list-container" id="list"></div>
-      </div>
+    <div class="filters">
+      <label>
+        <input type="radio" name="filter" value="all" checked> All
+      </label>
+      <label>
+        <input type="radio" name="filter" value="income"> Income
+      </label>
+      <label>
+        <input type="radio" name="filter" value="expense"> Expense
+      </label>
     </div>
-    <!-- Script -->
-    <script src="script.js"></script>
-  </body>
+
+    <div class="form">
+      <input type="text" id="description" placeholder="Description" required />
+      <input type="number" id="amount" placeholder="Amount" required />
+      <select id="type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <button onclick="addEntry()">Add Entry</button>
+      <button onclick="resetForm()">Reset</button>
+    </div>
+
+    <div class="overview">
+      <p>Total Income: <span id="total-income">0</span></p>
+      <p>Total Expenses: <span id="total-expense">0</span></p>
+      <p>Net Balance: <span id="net-balance">0</span></p>
+    </div>
+
+    <div class="entry-list">
+      <ul id="entries"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
